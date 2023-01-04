@@ -1,0 +1,23 @@
+{
+    "chain_name": "haqq",
+    "coingecko": "",
+    "api": ["https://api-haqq.smartinvest-explorer.xyz/"],
+    "rpc": ["https://rpc-haqq.smartinvest-explorer.xyz/"],
+    "snapshot_provider": "",
+    "sdk_version": "v0.45.9",
+    "testnet_chain": "haqq_54211-3",
+    "coin_type": "60",
+    "min_tx_fee": "3000000000000000",
+    "addr_prefix": "haqq",
+    "logo": "/logos/haqq.svg",
+    "assets": [{
+        "base": "aISLM",
+        "symbol": "ISLM",
+        "exponent": "18",
+        "coingecko_id": "",
+        "logo": "/logos/islm.png"
+    }],
+    "html": {
+        "name": "Smart Invest" 
+    }
+}

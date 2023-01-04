@@ -1,0 +1,17 @@
+{
+    "chain_name": "OKP4-testnet",
+    "api": ["https://api-okp4.smartinvest-explorer.xyz/"],
+    "rpc": ["https://rpc-okp4.smartinvest-explorer.xyz/"],
+    "snapshot_provider": "",
+    "testnet_chain": "okp4-nemeton-1",
+    "addr_prefix": "okp4",
+    "logo": "https://avatars.githubusercontent.com/u/91899131?s=200&v=4",
+    "assets": [
+      {
+        "base": "uknow",
+        "symbol": "KNOW",
+        "exponent": "6",
+        "logo": "https://avatars.githubusercontent.com/u/91899131?s=200&v=4"
+      }
+    ]
+  }

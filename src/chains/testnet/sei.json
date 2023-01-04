@@ -1,0 +1,19 @@
+{
+    "chain_name": "sei",
+    "coingecko": "",
+    "api": ["https://sei-api.nodeist.net"],
+    "snapshot_provider": "",
+    "sdk_version": "0.45.4",
+    "coin_type": "505",
+    "min_tx_fee": "800",
+    "addr_prefix": "sei",
+    "testnet_chain": "atlantic-1",
+    "logo": "https://nodeist.net/projeler/sei.png",
+    "assets": [{
+        "base": "usei",
+        "symbol": "SEI",
+        "exponent": "6", 
+        "coingecko_id": "",
+        "logo": "https://nodeist.net/projeler/sei.png"
+    }]
+}

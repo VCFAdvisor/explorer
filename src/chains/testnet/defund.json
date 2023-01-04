@@ -1,0 +1,17 @@
+{
+    "chain_name": "MUN",
+    "api": ["https://api-mun.smartinvest-explorer.xyz"],
+    "rpc": ["https://rpc-mun.smartinvest-explorer.xyz"],
+    "sdk_version": "v0.45.9",
+    "testnet_chain": "testmun",
+    "coin_type": "118",
+    "min_tx_fee": "2000",
+    "addr_prefix": "utmun",
+    "logo": "https://explorer.mun.money/logo.png",
+    "assets": [{
+        "base": "utmun",
+        "symbol": "TMUN",
+        "exponent": "6",
+        "logo": "https://explorer.mun.money/logo.png"
+    }]
+}
