@@ -6,6 +6,7 @@
     "testnet_chain": "okp4-nemeton-1",
     "addr_prefix": "okp4",
     "logo": "https://avatars.githubusercontent.com/u/91899131?s=200&v=4",
+    "sdk_version": "0.45.4",
     "assets": [
       {
         "base": "uknow",

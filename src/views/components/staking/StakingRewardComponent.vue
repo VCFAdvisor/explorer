@@ -22,7 +22,11 @@
         :key="d.amount"
         class="transaction-item"
       >
-        <b-media no-body>
+        <b-media
+          v-b-tooltip.hover.top
+          title="Rewards of all delegators"
+          no-body
+        >
           <b-media-aside>
             <b-avatar
               rounded
@@ -76,6 +80,7 @@
     </b-card-body>
     <b-card-body class="pt-0">
       <!-- <b-button
+      <b-button
         v-b-modal.WithdrawCommission
         block
         size="sm"
@@ -95,7 +100,7 @@
 
 <script>
 import {
-  BCard, BCardHeader, BCardTitle, BCardBody, BMediaBody, BMedia, BMediaAside, BAvatar,
+  BCard, BCardHeader, BCardTitle, BCardBody, BMediaBody, BMedia, BMediaAside, BAvatar, VBTooltip,
 } from 'bootstrap-vue'
 import { formatToken, numberWithCommas } from '@/libs/utils'
 import OperationModal from '@/views/components/OperationModal/index.vue'
@@ -111,6 +116,9 @@ export default {
     BMediaAside,
     BAvatar,
     OperationModal,
+  },
+  directives: {
+    'b-tooltip': VBTooltip,
   },
   props: {
     data: {

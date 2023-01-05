@@ -5,7 +5,6 @@
     "rpc": [],
     "snapshot_provider": "",
     "sdk_version": "0.44.3",
-    "testnet_chain": "deweb-testnet-sirius",
     "coin_type": "118",
     "min_tx_fee": "200",
     "addr_prefix": "deweb",

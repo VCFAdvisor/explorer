@@ -52,13 +52,12 @@
             <span class="text-uppercase">{{ chainid || selected_chain.chain_name }}</span>
           </h6>
           <small id="data-provider">
-            {{ currentApi }} ({{ selected_chain.sdk_version || '-' }})
             <b-dropdown
               class="ml-0"
               variant="flat-primary"
               no-caret
               toggle-class="p-0"
-              right
+              left
               sm
             >
               <template #button-content>
@@ -76,6 +75,7 @@
                 {{ item }}
               </b-dropdown-item>
             </b-dropdown>
+            {{ currentApi }} ({{ selected_chain.sdk_version || '-' }})
           </small>
         </b-media-body>
       </b-media>
@@ -84,8 +84,102 @@
     <!-- <dark-Toggler class="d-none d-lg-block" /> -->
     <!-- Right Col -->
     <b-navbar-nav class="nav align-items-center ml-auto">
-      <dark-Toggler class="d-none d-lg-block" />
+      <dark-Toggler />
       <search-bar />
+      <locale class="d-none" />
+      <!-- <b-dropdown
+        class="ml-1"
+        variant="link"
+        no-caret
+        toggle-class="p-0"
+        right
+      >
+
+        <template #button-content>
+          <b-button
+            v-ripple.400="'rgba(255, 255, 255, 0.15)'"
+            variant="primary"
+            class="btn-icon"
+          >
+            <feather-icon icon="KeyIcon" />
+            {{ walletName }}
+          </b-button>
+        </template>
+
+        <b-dropdown-item
+          v-for="(item,k) in accounts"
+          :key="k"
+          :disabled="!item.address"
+          @click="updateDefaultWallet(item.wallet)"
+        >
+          <div class="d-flex flex-column">
+            <div class="d-flex justify-content-between">
+              <span class="font-weight-bolder">{{ item.wallet }}
+                <b-avatar
+                  v-if="item.wallet===walletName"
+                  variant="success"
+                  size="sm"
+                >
+                  <feather-icon icon="CheckIcon" />
+                </b-avatar>
+              </span>
+              <b-link :to="`/${selected_chain.chain_name}/account/${item.address.addr}`">
+                <feather-icon icon="ArrowRightIcon" />
+              </b-link>
+            </div>
+            <small>{{ item.address ? formatAddr(item.address.addr) : `Not available on ${selected_chain.chain_name}` }}</small>
+          </div>
+        </b-dropdown-item>
+        <b-dropdown-divider />
+        <b-dropdown-item to="/wallet/import">
+          <feather-icon
+            icon="PlusIcon"
+            size="16"
+          />
+          <span class="align-middle ml-50">Connect Wallet</span>
+        </b-dropdown-item>
+        <b-dropdown-divider />
+
+        <b-dropdown-item :to="{ name: 'accounts' }">
+          <feather-icon
+            icon="KeyIcon"
+            size="16"
+          />
+          <span class="align-middle ml-50">Accounts</span>
+        </b-dropdown-item>
+
+        <b-dropdown-item :to="{ name: 'delegations' }">
+          <feather-icon
+            icon="BookOpenIcon"
+            size="16"
+          />
+          <span class="align-middle ml-50">My Delegations</span>
+        </b-dropdown-item>
+
+        <b-dropdown-item :to="`/${selected_chain.chain_name}/uptime/my`">
+          <feather-icon
+            icon="AirplayIcon"
+            size="16"
+          />
+          <span class="align-middle ml-50">My Validators</span>
+        </b-dropdown-item>
+
+        <b-dropdown-item :to="`/wallet/votes`">
+          <feather-icon
+            icon="PocketIcon"
+            size="16"
+          />
+          <span class="align-middle ml-50">My Votes</span>
+        </b-dropdown-item>
+
+        <b-dropdown-item :to="`/wallet/transactions`">
+          <feather-icon
+            icon="LayersIcon"
+            size="16"
+          />
+          <span class="align-middle ml-50">My Transactions</span>
+        </b-dropdown-item>
+      </b-dropdown> -->
     </b-navbar-nav>
   </div>
 </template>

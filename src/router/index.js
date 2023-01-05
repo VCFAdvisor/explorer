@@ -158,16 +158,16 @@ const router = new VueRouter({
       component: () => import('@/views/StakingValidator.vue'),
       meta: {
         pageTitle: 'Staking Validator',
-        breadcrumb: [
+        breadcrumb: route => ([
           {
             text: 'Staking',
-            active: true,
+            to: `/${route.params.chain}/staking`,
           },
           {
             text: 'Validator',
             active: true,
           },
-        ],
+        ]),
       },
     },
     {
@@ -226,16 +226,16 @@ const router = new VueRouter({
       component: () => import('@/views/Block.vue'),
       meta: {
         pageTitle: 'Block',
-        breadcrumb: [
+        breadcrumb: route => ([
           {
             text: 'Blocks',
-            active: true,
+            to: `/${route.params.chain}/blocks`,
           },
           {
             text: 'Block',
             active: true,
           },
-        ],
+        ]),
       },
     },
     {
@@ -282,6 +282,21 @@ const router = new VueRouter({
           },
           {
             text: 'Classic Trade',
+            active: true,
+          },
+        ],
+      },
+    },
+    // common modules
+    {
+      path: '/:chain/consensus',
+      name: 'consensus',
+      component: () => import('@/views/ConsensusStates.vue'),
+      meta: {
+        pageTitle: 'Consensus State',
+        breadcrumb: [
+          {
+            text: 'Consensus State',
             active: true,
           },
         ],

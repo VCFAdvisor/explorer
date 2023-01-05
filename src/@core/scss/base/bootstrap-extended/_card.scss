@@ -498,18 +498,6 @@
       font-weight: 500;
     }
   }
-  
-  @media (max-width: 470px) {
-    div > div.justify-content-around {
-      flex-direction: column;
-
-      h4 {
-        justify-content: left !important;
-        margin-bottom: 1rem !important;
-      }
-    }
-  }
-
 }
 
 // IE Specific CSS

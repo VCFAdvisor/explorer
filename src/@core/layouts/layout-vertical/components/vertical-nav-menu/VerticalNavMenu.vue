@@ -24,12 +24,18 @@
               class="navbar-brand"
               to="/"
             >
-              <b-img
-                :src="appLogoImage"
-                alt="logo"
-              />
+              <span class="brand-logo">
+                <b-img
+                  :src="appLogoImage"
+                  alt="logo"
+                />
+              </span>
+              <h2 class="brand-text">
+                {{ appName }}
+              </h2>
             </b-link>
           </li>
+
           <!-- Toggler Button -->
           <li class="nav-item nav-toggle">
             <b-link class="nav-link modern-nav-toggle">
