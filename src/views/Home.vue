@@ -32,9 +32,9 @@
               class="earnings-card text-left"
             >
               <div
-                class="d-flex justify-content-around"
+                class="d-flex justify-content-between pl-lg-5 pr-lg-5 f-wrap"
               >
-                <b-card-title class="mb-0 d-flex justify-content-between align-items-center">
+                <b-card-title class="mb-0 d-flex f-basis-30-percent align-items-center">
                   <b-avatar
                       :src="data.logo"
                       class="badge-minimal"
@@ -46,10 +46,10 @@
                     />
                   <span class="text-uppercase">{{ data.chain_name }} <small class="font-small-2">{{ data.sdk_version }}</small></span>
                 </b-card-title>
-                <h5 class="d-flex mb-0 align-items-center">
+                <h5 class="d-flex f-basis-30-percent mb-0 align-items-center">
                   {{ data.testnet_chain ? "Testnet: " + data.testnet_chain : 'Mainnet' }}
                 </h5>
-                <div class="d-flex justify-content-between">
+                <div class="d-flex f-basis-20-percent justify-content-between">
                   <div>
                     <div class="font-small-2">
                       Height
@@ -61,7 +61,7 @@
                   <div>
                   </div>
                 </div>
-                <b-card-text class="text-muted font-small-2 d-flex align-items-center">
+                <b-card-text class="f-basis-20-percent text-muted font-small-2 d-flex align-items-center">
                   <span> Updated on </span><span class="font-weight-bolder">{{ data.time || '...' }}</span>
                 </b-card-text>
               </div>
@@ -145,7 +145,7 @@ export default {
       if (chain.api) {
         const index = localStorage.getItem(`${chain.chain_name}-api-index`) || 0
         const host = Array.isArray(chain.api) ? chain.api[index] : chain.api
-        fetch(`${host}/blocks/latest`).then(res => res.json()).then(b => {
+        fetch(`${host}/cosmos/base/tendermint/v1beta1/blocks/latest`).then(res => res.json()).then(b => {
           const { header } = b.block
           this.$set(chain, 'height', header.height)
           this.$set(chain, 'time', toDay(header.time))
