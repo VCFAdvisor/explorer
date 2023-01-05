@@ -195,12 +195,13 @@ export function consensusPubkeyToHexAddress(consensusPubkey) {
   let raw = null
   if (typeof consensusPubkey === 'object') {
     if (consensusPubkey['@type'] === '/cosmos.crypto.ed25519.PubKey') {
-      raw = toBase64(fromHex(toHex(sha256(fromBase64(consensusPubkey.key))).slice(0, 40)))
+      // raw = toBase64(fromHex(toHex(sha256(fromBase64(consensusPubkey.key))).slice(0, 40)))
+      raw = toHex(sha256(fromBase64(consensusPubkey.key))).slice(0, 40).toUpperCase()
       return raw
     }
     // /cosmos.crypto.secp256k1.PubKey
     if (consensusPubkey['@type'] === '/cosmos.crypto.secp256k1.PubKey') {
-      raw = toBase64(fromHex(new RIPEMD160().update(Buffer.from(sha256(fromBase64(consensusPubkey.key)))).digest('hex')))
+      raw = new RIPEMD160().update(Buffer.from(sha256(fromBase64(consensusPubkey.key)))).digest('hex')
       return raw
     }
     if (consensusPubkey.type === 'tendermint/PubKeySecp256k1') {
@@ -247,10 +248,11 @@ export async function sign(device, chainId, signerAddress, messages, fee, memo, 
       throw new Error('Please install keplr extension')
     }
     await window.keplr.enable(chainId)
-    const signer = window.getOfflineSigner(chainId)
     if (isEvmosBasedChain(chainId)) {
+      const signer = window.getOfflineSigner(chainId)
       client = await SigningKeplerEthermintClient.offline(signer)
     } else {
+      const signer = window.getOfflineSignerOnlyAmino(chainId)
       client = await SigningStargateClient.offline(signer)
     }
   }
@@ -489,19 +491,21 @@ export function getCachedValidators(chainName) {
 }
 
 export function isHexAddress(v) {
-  const re = /^[A-Z\d]{40}$/
-  return re.test(v)
+  // const re = /^[A-Z\d]{40}$/
+  // return re.test(v)
+  return v.length === 28
 }
 
-export function getStakingValidatorByHex(chainName, hex) {
+export function getStakingValidatorByHex(chainName, textBase64) {
   const locals = localStorage.getItem(`validators-${chainName}`)
   if (locals) {
-    const val = JSON.parse(locals).find(x => consensusPubkeyToHexAddress(x.consensus_pubkey) === hex)
+    const val = JSON.parse(locals)
+      .find(x => toBase64(fromHex(consensusPubkeyToHexAddress(x.consensus_pubkey))) === textBase64)
     if (val) {
       return val.description.moniker
     }
   }
-  return abbr(hex)
+  return abbr(textBase64)
 }
 
 export function getStakingValidatorByAccount(chainName, addr) {

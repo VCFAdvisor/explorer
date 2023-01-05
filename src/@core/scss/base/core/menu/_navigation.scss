@@ -76,22 +76,22 @@
     position: relative;
     padding: 0.35rem 1rem 0.3rem 1.64rem;
     transition: 300ms ease all, background 0s;
-    box-shadow: 1px 3px 1px rgb(237 237 237 / 50%);
-    z-index: 1;
-
-    .nav-item:first-child {
-      width: 75%;
-    }
-
     .navbar-brand {
-      display: block;
+      display: flex;
       align-items: center;
-      margin: 1rem;
-      margin-left: 0;
+      margin-top: 1.35rem;
       font-size: inherit;
-
-      img {
-        width: 100%;
+      .brand-logo img {
+        max-width: 36px;
+      }
+      .brand-text {
+        color: $primary;
+        padding-left: 1rem;
+        margin-bottom: 0;
+        font-weight: 600;
+        letter-spacing: 0.01rem;
+        font-size: 1rem;
+        animation: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 fadein;
       }
     }
     .modern-nav-toggle {
