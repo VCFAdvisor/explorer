@@ -3,7 +3,7 @@
     "api": ["https://api-uptick.smartinvest-explorer.xyz"],
     "rpc": ["https://rpc-uptick.smartinvest-explorer.xyz"],
     "sdk_version": "v0.45.9",
-    "testnet_chain": "uptick_7000-1",
+    "testnet_chain": "uptick_117-1",
     "coin_type": "118",
     "min_tx_fee": "200",
     "addr_prefix": "uptick",

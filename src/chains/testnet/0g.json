@@ -1,0 +1,17 @@
+{
+    "chain_name": "0G",
+    "api": ["https://api-0g.smartinvest-explorer.xyz"],
+    "rpc": ["https://rpc-0g.smartinvest-explorer.xyz"],
+    "sdk_version": "v0.45.9",
+    "testnet_chain": "zgtendermint_9000-1",
+    "coin_type": "118",
+    "min_tx_fee": "200",
+    "addr_prefix": "evmos",
+    "logo": "https://0g.ai/zg-logo.svg",
+    "assets": [{
+        "base": "aevmos",
+        "symbol": "EVMOS",
+        "exponent": "18",
+        "logo": "https://0g.ai/zg-logo.svg"
+    }]
+}

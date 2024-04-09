@@ -20,7 +20,7 @@ const configsTest = require.context('../../chains/mainnet', false, /\.json$/)
 
 const update = {}
 configs.keys().concat(configsTest.keys()).forEach(k => {
-  if (k.includes('haqq') || k.includes('okp4') || k.includes('mun') || k.includes('uptick')) {
+  if (k.includes('0g') || k.includes('uptick')) {
     const c = configs(k)
     c.chain_name = String(c.chain_name).toLowerCase()
     update[c.chain_name] = c

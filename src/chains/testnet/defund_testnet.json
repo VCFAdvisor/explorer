@@ -1,0 +1,16 @@
+{
+    "chain_name": "DEFUND-TESTNET",
+    "api": ["https://api-defund.smartinvest-explorer.xyz/"],
+    "rpc": ["https://rpc-defund.smartinvest-explorer.xyz/"],
+    "testnet_chain": "orbit-alpha-1",
+    "coin_type": 118,
+    "min_tx_fee": 200,
+    "addr_prefix": "defund",
+    "logo": "https://raw.githubusercontent.com/kj89/cosmos-images/main/logos/defund.png",
+    "assets": [{
+        "base": "ufetf",
+        "symbol": "FETF",
+        "exponent": 6,
+        "logo": "https://raw.githubusercontent.com/kj89/cosmos-images/main/logos/defund.png"
+    }]
+}

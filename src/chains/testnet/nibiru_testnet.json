@@ -1,0 +1,16 @@
+{
+    "chain_name": "NIBIRU-TESTNET",
+    "api": ["https://api-nibiru.smartinvest-explorer.xyz/"],
+    "rpc": ["https://rpc-nibiru.smartinvest-explorer.xyz/"],
+    "coin_type": 118,
+    "min_tx_fee": 200,
+    "testnet_chain": "nibiru-itn-1",
+    "addr_prefix": "nibi",
+    "logo": "https://raw.githubusercontent.com/kj89/testnet_manuals/main/pingpub/logos/nibiru.png",
+    "assets": [{
+        "base": "unibi",
+        "symbol": "NIBI",
+        "exponent": 6,
+        "logo": "https://raw.githubusercontent.com/kj89/testnet_manuals/main/pingpub/logos/nibiru.png"
+    }]
+}
